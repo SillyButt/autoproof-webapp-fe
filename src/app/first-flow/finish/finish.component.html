@@ -1,0 +1,18 @@
+<main>
+  <header>
+    <h2 class="tui-text_h2">Connect wallet</h2>
+    <h6 class="tui-text_h6">The authority of the file will belong to the wallet</h6>
+  </header>
+
+  @if (!loading()) {
+    <button
+      tuiButton
+      class="connect-button"
+      (click)="connect()"
+    >Connect wallet</button>
+  } @else {
+    <div class="loading">
+      <tui-loader [showLoader]="true"></tui-loader>
+    </div>
+  }
+</main>

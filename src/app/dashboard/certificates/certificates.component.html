@@ -1,0 +1,51 @@
+@if (loading()) {
+  <div class="loading">
+    <tui-loader [showLoader]="true"></tui-loader>
+  </div>
+} @else {
+  @for (snapshot of snapshots(); track snapshot.id) {
+    <div
+      tuiCardLarge
+      tuiSurface="elevated"
+      tuiAppearance="secondary"
+    >
+      <div tuiHeader>
+        <h2 tuiTitle>
+          <div class="card-title">
+            <div>Certificate</div>
+            @if (snapshot.status !== 'done') {
+              <tui-badge appearance="info">Draft</tui-badge>
+            }
+          </div>
+          <span tuiSubtitle>{{ snapshot.description }}</span>
+        </h2>
+      </div>
+
+      <footer>
+        <button
+          appearance="secondary"
+          size="m"
+          tuiButton
+          type="button"
+          [iconLeft]="snapshot.status === 'done' ? 'tuiIconFile' : ''"
+          [disabled]="certificateLoading().includes(snapshot.id)"
+          (click)="snapshot.status === 'done' ? openCertificate(snapshot) : createCertificate(snapshot)"
+        >
+          @if (snapshot.status === 'done') {
+            See certificate
+          } @else if (certificateLoading().includes(snapshot.id)) {
+            <tui-loader [showLoader]="true"></tui-loader>
+          } @else {
+            Complete creation
+          }
+        </button>
+      </footer>
+    </div>
+  }
+}
+
+<button
+  tuiButton
+  class="new-certificate"
+  routerLink="/new-certificate"
+>New certificate</button>

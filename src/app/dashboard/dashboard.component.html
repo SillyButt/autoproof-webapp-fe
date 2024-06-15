@@ -1,0 +1,37 @@
+<main>
+  <header>
+    <section>
+      @if (user) {
+        <tui-avatar-labeled [label]="user?.first_name">
+          <tui-avatar src="https://i.pinimg.com/564x/35/9b/6a/359b6a8cee5894e22497357efe197b53.jpg"></tui-avatar>
+        </tui-avatar-labeled>
+        <tui-badge appearance="info">400 points</tui-badge>
+      }
+    </section>
+  </header>
+
+  <nav>
+    <tui-tabs [(activeItemIndex)]="activeTabIndex">
+      <button
+        tuiTab
+        routerLink="certificates"
+      >
+        Certificates
+      </button>
+      <button
+        tuiTab
+        routerLink="referrals"
+      >
+        Referrals
+      </button>
+      <button
+        tuiTab
+        routerLink="settings"
+      >
+        Settings
+      </button>
+    </tui-tabs>
+  </nav>
+
+  <router-outlet></router-outlet>
+</main>

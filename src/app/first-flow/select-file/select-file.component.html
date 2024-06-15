@@ -1,0 +1,53 @@
+<main>
+  <header>
+    <h2 class="tui-text_h2">Guard Your Digital Assets</h2>
+    <h6 class="tui-text_h6">Get a certificate now</h6>
+  </header>
+
+  <tui-notification
+    status="info"
+    [hasIcon]="true"
+  >
+    We don't access or upload your file.
+    The digital fingerprint for the certificate is created on your device.
+  </tui-notification>
+
+  <form [formGroup]="form">
+    <div class="tui-row tui-row_sme">
+      <div class="tui-col_12">
+        <div class="tui-form__row">
+          <tui-input-files formControlName="files">
+            <input
+              tuiInputFiles
+              [multiple]="true"
+            />
+          </tui-input-files>
+        </div>
+
+        <tui-files>
+          @for (file of form.controls.files.value; track file.name) {
+            <tui-file
+              tuiItem
+              [file]="file"
+              [showDelete]="true"
+              (removed)="removeFile(file)"
+            ></tui-file>
+          }
+        </tui-files>
+
+        <div class="tui-form__row">
+          <tui-textarea formControlName="description">
+            Describe your art
+            <span class="tui-required"></span>
+          </tui-textarea>
+          <tui-error
+            formControlName="description"
+            [error]="[] | tuiFieldError | async"
+          ></tui-error>
+        </div>
+
+        <button tuiButton (click)="next($event)">Next</button>
+      </div>
+    </div>
+  </form>
+</main>

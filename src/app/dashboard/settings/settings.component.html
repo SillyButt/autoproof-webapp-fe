@@ -1,0 +1,29 @@
+<main>
+  <div class="tui-form__row">
+    <tui-input formControlName="name">
+      Your full name
+      <input tuiTextfield/>
+      <span class="tui-required"></span>
+    </tui-input>
+
+    <tui-error
+      formControlName="name"
+      [error]="[] | tuiFieldError | async"
+    ></tui-error>
+  </div>
+
+  <div class="tui-form__row">
+    <tui-input formControlName="address">
+      Your address
+      <input tuiTextfield placeholder="e.g. 90 Sunrise Blvd, Citrus Heights, CA 99201, USA"/>
+      <span class="tui-required"></span>
+    </tui-input>
+
+    <tui-error
+      formControlName="address"
+      [error]="[] | tuiFieldError | async"
+    ></tui-error>
+  </div>
+
+  <button tuiButton (click)="logOut()">Log out from wallet</button>
+</main>

@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+button.new-certificate {
+  position: absolute;
+  bottom: 40px;
+  width: calc(100% - 40px);
+}
+
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

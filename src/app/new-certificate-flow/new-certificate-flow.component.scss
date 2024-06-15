@@ -1,0 +1,11 @@
+tui-breadcrumbs {
+  justify-content: center;
+  padding: 20px;
+}
+
+a {
+  &.active-link {
+    color: var(--tui-text-01);
+  }
+}
+

@@ -1,0 +1,17 @@
+<main>
+  <header>
+    <h2 class="tui-text_h2">Save draft</h2>
+    <h6 class="tui-text_h6">The authority of the file will belong to this wallet</h6>
+  </header>
+
+  @if (!loading()) {
+    <button
+      tuiButton
+      (click)="createCertificate()"
+    >Save draft</button>
+  } @else {
+    <div class="loading">
+      <tui-loader [showLoader]="true"></tui-loader>
+    </div>
+  }
+</main>

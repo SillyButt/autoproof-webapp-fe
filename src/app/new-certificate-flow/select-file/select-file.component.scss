@@ -1,0 +1,41 @@
+main {
+  padding: 0 20px;
+}
+
+header {
+  text-align: center;
+
+  h2 {
+    margin: 8px 0;
+  }
+
+  h6 {
+    margin-bottom: 0px;
+  }
+}
+
+form {
+  tui-input-files {
+    margin-top: 12px;
+  }
+
+  tui-files {
+    margin-top: 12px;
+  }
+}
+
+.buttons {
+  position: absolute;
+  width: calc(100% - 40px);
+  bottom: 40px;
+
+  button.next {
+    margin-top: 24px;
+    width: 100%;
+  }
+
+  button.back {
+    margin-top: 8px;
+    width: 100%;
+  }
+}

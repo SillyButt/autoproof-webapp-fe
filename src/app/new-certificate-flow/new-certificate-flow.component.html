@@ -1,0 +1,15 @@
+<tui-breadcrumbs>
+  @for (item of items; track item.caption) {
+    <a
+      *tuiItem
+      tuiLink
+      routerLinkActive="active-link"
+      [routerLink]="item.routerLink"
+      (click)="breadcrumbClick($event, item.routerLink)"
+    >
+      {{ item.caption }}
+    </a>
+  }
+</tui-breadcrumbs>
+
+<router-outlet></router-outlet>

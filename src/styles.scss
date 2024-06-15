@@ -1,0 +1,15 @@
+body {
+  --tui-base-01: var(--tg-theme-bg-color, #fff);
+
+  --tui-text-01: var(--tg-theme-text-color, #1b1f3b);
+  --tui-text-02: var(--tg-theme-text-color, rgba(27, 31, 59, .65));
+
+  --tui-primary: var(--tg-theme-button-color, #526ed3);
+  --tui-primary-text: var(--tg-theme-button-text-color, #fff);
+
+  --tui-info-fill: var(--tg-theme-hint-color, #70b6f6);
+
+  --tui-link: var(--tg-theme-link-color, #526ed3);
+
+  --tui-elevation-01: var(--tg-theme-secondary-bg-color, #fff);
+}
